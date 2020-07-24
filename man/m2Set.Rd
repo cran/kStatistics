@@ -9,7 +9,7 @@ m2Set( v )
 
 \arguments{
 
-\item{v}{multiset structure of type [[e1,e2,...], m1], [[f1,f2,...], m2],... with m1, m2 multiplicityies}
+\item{v}{multiset structure of type [[e1,e2,...], m1], [[f1,f2,...], m2],... with m1, m2 multiplicities}
 }
 
 \details{Consider the multiset [a,a,b]. The subdivisions are [[[a,b],[a]],2],[[[a],[a],[b]],1], [[a,a,b],1], [[a,a],[b],1].
@@ -26,7 +26,7 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 }
 
 \note{
-Called by the functions \code{\link{nKM}}, \code{\link{nPM}}  in the package \code{kStatistics}
+Called by the functions \code{\link{nKM}}, \code{\link{nPM}}  in the package \code{kStatistics}.
 }
 
 
@@ -47,15 +47,16 @@ M1 <- mkmSet(c(2,1))
 #   [[2,0],[0,1]], 1]
 # ]
 # 
+
+# Return the following set:  [[1,1],[1,0],[0,1],[2,1],[2,0]] 
 m2Set( M1 )
-# generates the following set:  [[1,1],[1,0],[0,1],[2,1],[2,0]] 
 
 }
 
 
 % R KEYWORDS
-\keyword{ multivariate }
-\keyword{ univar }
-\keyword{ list }
-\keyword{ symbolmath }
+\keyword{multivariate}
+\keyword{univar}
+\keyword{list}
+\keyword{symbolmath}
 

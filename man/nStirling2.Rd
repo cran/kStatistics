@@ -49,8 +49,9 @@ Called by the functions \code{\link{nKS}}, \code{\link{nKM}} in the package \cod
 }
 
 \examples{
+# Generate the number of ways to partition a set of 6 objects into 2 non-empty subsets
 nStirling2(6,2) 
-#generate 31, the number of ways to partition a set of 6 objects into 2 non-empty subsets
+
 }
 
 

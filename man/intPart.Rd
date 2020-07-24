@@ -1,7 +1,7 @@
 \name{intPart}
 \alias{intPart}
 \title{Integer partitions}
-\description{Generates all possible (unique) ways to represent a positive integer n as sum of positive integers.}
+\description{Generate all possible (unique) ways to represent a positive integer n as sum of positive integers.}
 
 \usage{
 intPart(n) 
@@ -13,7 +13,8 @@ intPart(n)
 }
 
 \details{A partition of an integer n is a sequence of weakly increasing integers such that their sum returns n. 
-The function generates all the partitions of a given integer in sorted order and numbers within a partition in sorted order too.}
+The function generates all the partitions of a given integer 
+in sorted order.}
 
 \value{
  \item{list}{all partitions of n}
@@ -43,18 +44,21 @@ Called by the function \code{\link{mkmSet}} in the package \code{kStatistics}
 }
 
 \examples{
+# Return the partition of the integer 3, that is 
+# [1,1,1],[1,2],[3]
 intPart(3) 
-# returns the partitions [1,1,1],[1,2],[3] 
 
+# Return the partition of the integer 4, that is 
+# [1,1,1,1],[1,1,2],[1,3],[2,2],[4]
 intPart(4) 
-# returns the partitions [1,1,1,1],[1,3],[2,2],[4]
 }
 
 
 % R KEYWORDS
-\keyword{ multivariate }
-\keyword{ univar }
-\keyword{ list }
-\keyword{ symbolmath }
+\keyword{multivariate}
+\keyword{univar}
+\keyword{list}
+\keyword{symbolmath}
+\keyword{combinatorics}
 
 

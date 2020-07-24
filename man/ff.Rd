@@ -38,14 +38,14 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 }
 
 \examples{
+# Return 6*5*4 = 120
 ff(6,3) 
-# returns 6*5*4 = 120
 }
 
 % R KEYWORDS
-\keyword{ multivariate }
-\keyword{ univar }
-\keyword{ list }
-\keyword{ symbolmath }
+\keyword{multivariate}
+\keyword{univar}
+\keyword{list}
+\keyword{symbolmath}
 
 

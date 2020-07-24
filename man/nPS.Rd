@@ -10,14 +10,14 @@ nPS( v, V )
 
 \arguments{
 
-\item{v}{array of integers}
-\item{V}{array of sample data}
+\item{v}{vector of integers}
+\item{V}{vector of sample data}
 }
 
 \details{Products of kstatistics are known as polykays. They are unbiased estimators of products of cumulants of 
 a distribution and are expressed in terms of the power sum symmetric polynomials in the random variables of the 
-sample. Thus, for the given sample data, nPS(c(i,j,...),data) computes an estimate of the product c_i*c_j*... 
-where c_i, c_j, ... are cumulants of the population distribution.
+sample. Thus, for the given sample data, nPS(c(i,j,...),data) computes an estimate of the product k[i]*k[j]*... 
+where k[i], k[j], ... are cumulants of the population distribution.
 }
 
 \value{
@@ -27,13 +27,13 @@ where c_i, c_j, ... are cumulants of the population distribution.
 \references{
 
 E. Di Nardo, G. Guarino, D. Senato (2008) An unifying framework for k-statistics, polykays and their generalizations. 
-Bernoulli. Vol. 14(2), 440-468. (download from \url{http://www.elviradinardo.it/lavori1.html}) 
+Bernoulli. 14(2), 440-468. (download from \url{http://arxiv.org/pdf/math/0607623.pdf}) 
  
 E. Di Nardo, G. Guarino, D. Senato (2008) Symbolic computation of moments of sampling distributions. 
-Comp. Stat. Data Analysis Vol. 52(11), 4909-4922, (download from \url{http://www.elviradinardo.it/lavori1.html}) 
+Comp. Stat. Data Analysis. 52(11), 4909-4922. (download from \url{http://arxiv.org/abs/0806.0129}) 
 
 E. Di Nardo, G. Guarino, D. Senato (2009) A new method for fast computing unbiased estimators of cumulants. 
-Statistics and Computing, Vol. 19, 155-165.  (download from \url{http://www.elviradinardo.it/lavori1.html}) 
+Statistics and Computing, 19, 155-165.  (download from \url{https://arxiv.org/abs/0807.5008}) 
 
 P. McCullagh, J. Kolassa (2009), Scholarpedia, 4(3):4699. \url{http://www.scholarpedia.org/article/Cumulants}
 }
@@ -59,12 +59,14 @@ Called by the master function \code{\link{nPolyk}} in the package \code{kStatist
 
 \examples{
 
+# Data assignment
 data<-c(16.34, 10.76, 11.84, 13.55, 15.85, 18.20, 7.51, 10.22, 12.52, 14.68, 16.08, 
 19.43,8.12, 11.20, 12.95, 14.77, 16.83, 19.80, 8.55, 11.58, 12.10, 15.02, 16.83, 
 16.98, 19.92, 9.47, 11.68, 13.41, 15.35, 19.11)
-nPS(c(2,1), data) 
-# generate an estimate of the product c_2*c_1, where c_1 and c_2 are respectively 
+
+# Return the estimate of the product k[2]*k[1], where k[1] and k[2] are respectively 
 # the mean and the variance of the population distribution  
+nPS(c(2,1), data) 
 
 }
 

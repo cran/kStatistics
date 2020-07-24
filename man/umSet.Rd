@@ -1,7 +1,7 @@
 \name{umSet}
 \alias{umSet}
 \title{Disjoint union of multisets}
-\description{Generates the disjoint union of two or more multisets, by adding the multiplicity of equal elements.}
+\description{The function returns the disjoint union of two or more multisets, by adding the multiplicity of equal elements.}
 
 \usage{
 umSet( pM )
@@ -24,8 +24,7 @@ multiplicity 8. See also examples.
 
 \references{
 E. Di Nardo, G. Guarino, D. Senato (2008) An unifying framework for k-statistics, polykays and their generalizations. 
-Bernoulli. Vol. 14(2), 440-468. (download from \url{http://www.elviradinardo.it/lavori1.html}) 
-
+Bernoulli. 14(2), 440-468. (download from \url{http://arxiv.org/pdf/math/0607623.pdf}) 
 }
 
 \author{
@@ -34,7 +33,7 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 }
 
 \note{
-Called by the function \code{\link{nPM}} in the package \code{kStatistics}
+Called by the function \code{\link{nPM}} in the package \code{kStatistics}.
 }
 
 
@@ -50,10 +49,10 @@ Called by the function \code{\link{nPM}} in the package \code{kStatistics}
 
 \examples{
 
+# Return the list( list( c(1,1), c(1,0) ), c(8) )
 M1 <- list( list( c(1,1), c(1,0) ), c(3) ) 
 M2 <- list( list( c(1,1), c(1,0) ), c(5) ) 
 umSet(list(M1,M2)) 
-# generates the list( list( c(1,1), c(1,0) ), c(8) )
 
 }
 

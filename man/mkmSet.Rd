@@ -2,7 +2,7 @@
 \alias{mkmSet}
 \title{Subdivisions of a Multiset}
 \description{Generate all the subdivisions of a multiset, reducing the overall computational complexity 
-using integer partitions}
+by using integer partitions.}
 
 \usage{
       mkmSet(vPar)
@@ -10,18 +10,17 @@ using integer partitions}
 
 \arguments{
 
-\item{vPar}{Number of blocks to consider or array of numbers of blocks to consider}
+\item{vPar}{Number of blocks to consider or vector of numbers of blocks to consider}
 
 }
 
 \value{
- \item{list }{two-dimensional list: in the first there is the partition type, while in the second there is 
+ \item{list}{two-dimensional list: in the first there is the partition type, while in the second there is 
 its multiplicity}}
 
 \references{
-Di Nardo E., G. Guarino and D. Senato (2008) An unifying framework for k-statistics, polykays and their generalizations. 
-Bernoulli. Vol. 14(2), 440-468. Official Journal of the Bernoulli Society for Mathematical Statistics and Probability, 
-\url{http://isi.cbs.nl/bernoulli/}, (download from \url{http://www.elviradinardo.it/lavori1.html}) 
+E. Di Nardo, G. Guarino, D. Senato (2008) An unifying framework for k-statistics, polykays and their generalizations. 
+Bernoulli. 14(2), 440-468. (download from \url{http://arxiv.org/pdf/math/0607623.pdf}) 
 }
 
 \author{
@@ -32,7 +31,7 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 
 \note{
 Called by the functions \code{\link{nKS}}, \code{\link{nKM}}, \code{\link{nPS}}, \code{\link{nPM}} in 
-the package \code{kStatistics}
+the package \code{kStatistics}.
 }
 
 \note{This is the most important function for calculating kStatistics and Polykays.\cr \cr
@@ -66,13 +65,14 @@ the subdivision [[a,b],[a]] with multiplicities 2.
 }
 
 \examples{
-mkmSet(3)
-# generates [ [[1,1,1],1], [[1,2],3], [[3],1]  ]
-# The support of the muliset has all the same eleents
 
-mkmSet(c(2,1)) 
-# generates [ [[1,1],[1,0],2], [[1,0],[1,0],[0,1],1],[[2,0],[0,1],1], [[2,1],1] ]
+# Return [ [[1,1,1],1], [[1,2],3], [[3],1]  ]
+# The support of the multiset has all the same eleents
+mkmSet(3)
+
+# Return [ [[1,1],[1,0],2], [[1,0],[1,0],[0,1],1],[[2,0],[0,1],1], [[2,1],1] ]
 # The support of the multiset has 2 elements with instances respectively 2 and 1.
+mkmSet(c(2,1)) 
 
 }
 

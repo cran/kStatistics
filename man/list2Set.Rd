@@ -9,11 +9,11 @@ list2Set(v)
 
 \arguments{
 
-\item{v}{single array or list of arrays}
+\item{v}{single vector or list of vectors}
 }
 
 \value{
- \item{set}{sequence of distinct elements given in v}
+ \item{set}{sequence of distinct elements}
 }
 
 \author{
@@ -31,16 +31,18 @@ Called by the function \code{\link{list2m}} in the package \code{kStatistics}
 }
 
 \examples{
-list2Set(c(1,2,3,1,2,5,6)) 
-#returns c(1,2,3,5,6) 
 
+# Return c(1,2,3,5,6)
+list2Set(c(1,2,3,1,2,5,6)) 
+ 
+# Return the list (c(1,2),c(10,11),c(7,8))
 list2Set( list(c(1,2),c(1,2),c(10,11),c(1,2),c(7,8))) 
-#returns list(c(1,2),c(10,11),c(7,8))
+
 }
 
 
 % R KEYWORDS
-\keyword{ multivariate }
-\keyword{ univar }
-\keyword{ list }
-\keyword{ symbolmath }
+\keyword{multivariate}
+\keyword{univar}
+\keyword{list}
+\keyword{symbolmath}

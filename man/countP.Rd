@@ -1,14 +1,14 @@
 \name{countP}
 \alias{countP}
 \title{Multiplicity of a subdivision}
-\description{Computes the multiplicity of a subdivision of a multiset.}
+\description{Compute the multiplicity of a subdivision of a multiset.}
 
 \usage{
 countP( v )
 }
 
 \arguments{
-\item{v}{array or list}
+\item{v}{vector or list}
 }
 
 \details{
@@ -25,13 +25,13 @@ respectively.
 }
 
 \value{
-\item{positive integer}{multiplicity of researched item}
+ \item{integer}{the multiplicity of the given item}
 }
 
 \references{
-E. Di Nardo, G. Guarino and D. Senato (2008) An unifying framework for k-statistics, polykays and their generalizations. 
-Bernoulli. Vol. 14(2), 440-468. (download from \url{http://www.elviradinardo.it/lavori1.html}) 
-}
+E. Di Nardo, G. Guarino, D. Senato (2008) An unifying framework for k-statistics, polykays and their generalizations. 
+Bernoulli. 14(2), 440-468. (download from \url{http://arxiv.org/pdf/math/0607623.pdf}) 
+ }
 
 \author{
 Elvira Di Nardo \email{elvira.dinardo@unito.it},\cr 
@@ -39,7 +39,7 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 }
 
 \note{
-Called by the function \code{\link{mkmSet}}, \code{\link{nPS}} in the package \code{kStatistics}
+Called by the function \code{\link{mkmSet}}, \code{\link{nPS}} in the package \code{kStatistics}.
 }
 
 
@@ -54,15 +54,15 @@ Called by the function \code{\link{mkmSet}}, \code{\link{nPS}} in the package \c
 
 \examples{
 
+# Return  the multiplicity of [[a],[aa]]
 countP(c(1,2))
-# returns the multiplicity of [[a],[aa]]  
-
+  
+# Return  the multiplicity of [[a,a,a,a],[a,a]]
 countP(c(4,2))
-# returns the multiplicity of [[a,a,a,a],[a,a]]  
-
+  
+# Return  the multiplicity of [[aa],[a],[a],[b],[bb]]
 countP( list(c(2,0), c(1,0), c(1,0), c(0,1),c(0,2)) )
-# returns the multiplicity of [[aa],[a],[a],[b],[bb]] 
-
+ 
 }
 
 
@@ -71,3 +71,4 @@ countP( list(c(2,0), c(1,0), c(1,0), c(0,1),c(0,2)) )
 \keyword{univar}
 \keyword{list}
 \keyword{symbolmath}
+\keyword{combinatorics}
