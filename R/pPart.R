@@ -1,14 +1,14 @@
 pPart <-
 function(n=0) {
-  if ((length(n) > 1 ) || (n<=0)) stop("The first parameter must be positive integer");
-  v<-MFB(n,1);                                  # Recall MFB Function
-  v<-MFB2Set( v );                              # Expression to vector 
+  if ((length(n) > 1 ) || (n<=0)) stop("The first parameter must be a positive integer");
+  v<-MFB(n,1);                                # Call the MFB Function
+  v<-MFB2Set( v );                            # Expression to vector 
   for (j in 1:length(v)) {
     # ----- read -----------[ fix block ]-----#---------------#
-    c <- as.character(v[[j]][2]);           # coefficient
-    x <-              v[[j]][3] ;           # variable
-    i <-              v[[j]][4] ;           # subscript
-    k <-       strtoi(v[[j]][5]);           # power
+    c <- as.character(v[[j]][2]);             # coefficient
+    x <-              v[[j]][3] ;             # variable
+    i <-              v[[j]][4] ;             # subscript
+    k <-       strtoi(v[[j]][5]);             # power
     # ----- change ---------------------------#---------------#
     if (x=="f") {
       c<-paste0(c,"/factorial(",n,")");

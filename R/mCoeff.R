@@ -1,5 +1,7 @@
 mCoeff <-
-function (v,L) {
+function (v=NULL,L=NULL) {
+ if ( is.null(v) ) stop("The first parameter is missing")
+ if ( is.null(L) ) stop("The second parameter is missing")    
  if (typeof(v)=="list") {
      for (u in L) { 
          if ( setequal( v ,u[[1]]  ) & length(v)==length(u[[1]]) ) return(u[[2]]);

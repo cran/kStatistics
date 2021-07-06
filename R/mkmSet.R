@@ -1,5 +1,6 @@
 mkmSet <-
-function (vPar) {
+function (vPar=NULL, vOutput=FALSE) {
+  if ( is.null(vPar) ) stop("The first parameter is missing")
   for (i in unlist(vPar)) if (i < 0) 
       stop("The values cannot be negative");
   #======================#
@@ -53,9 +54,10 @@ function (vPar) {
      s<-sum(v);u<-intPart(s);
      for (i in 1:length(u) )  
          U[[i]]<-c(c(u[i]),countP(u[[i]]) );
-         return(U);}
-  
-
+         #return(U);
+         u<-U;
+  }
+  else {
   vHead<-c();
   for (i in 1:length(v))
       if (v[i]==0) {vHead[i]<-0;}
@@ -96,6 +98,37 @@ function (vPar) {
   if (length(vHead)>0) { 
      for (i in 1:length(u) ) for (j in 1:length(u[[i]][[1]])) u[[i]][[1]][[j]] <-c( vHead, u[[i]][[1]][[j]] );
   }
+  # Internal Sort
+  for (i in 1:length(u)){
+     if (length(u[[i]][[1]])>1) {
+        for (j1 in 1:(length(u[[i]][[1]])-1)){ 
+            for (j2 in (j1+1):length(u[[i]][[1]])){
+                 if (paste0(u[[i]][[1]][j1])>paste0(u[[i]][[1]][j2]) )
+                 {  cTMP<-u[[i]][[1]][j1]; u[[i]][[1]][j1]<-u[[i]][[1]][j2]; u[[i]][[1]][j2]<-cTMP;}
+            } 
+        }
+     }
+  } 
+
+  # Sort
+  if (length(u)>1){ 
+      for (i in 1:(length(u)-1) ) { 
+            for (j in (i+1):length(u) ) {
+               if ( paste0(u[i]) > paste0(u[j]) )
+               {cTMP<-u[i];u[i]<-u[j];u[j]<-cTMP;}
+           }
+      }
+  }
  
-  return( u );  
+ }  #END ELSE
+ 
+  
+ if (!vOutput) return( u ); 
+ for (mm in u) { 
+    cat("[");
+    for (m in mm[[1]]) {cat("(",m,")") }; 
+    cat(", ", mm[[2]], "]\n");
+ } 
+ cat("\r\n");
+  
 }

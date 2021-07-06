@@ -1,12 +1,11 @@
 e_GCBellPol <-
 function(pv=c(), pn=0, pyc=c(), pc=c(), b=FALSE) {
   
-  if (length(pv)<1) stop("the first parameter must be a non-zero vector of integers");
-  if (pn<1)  stop("the second parameter must be a positive integer")
-  for (m in unlist(pv)) if (m<0) stop("the first parameter cannot contain negative values");
+  if (length(pv)<1) stop("The first parameter must be a non-zero vector of integers");
+  if (pn<1)  stop("The second parameter must be a positive integer")
+  for (m in unlist(pv)) if (m<0) stop("The first parameter cannot contain negative values");
   if (typeof(pyc)=="character") {if ((length(pc)!=0) || (b==TRUE)) stop (pyc)};
   vyc<-c();vc<-c();
-  #l_MFB<-GCBellPol(pv,pn);
   l_MFB<-GCBellPol(pv,pn);
   l_MFB<-gsub("\\(","",l_MFB);
   l_MFB<-gsub("\\)","",l_MFB);
@@ -83,7 +82,7 @@ function(pv=c(), pn=0, pyc=c(), pc=c(), b=FALSE) {
        for (i in seq(1,(length(vyc)-1),2) ) s<-gsub(vyc[i],vyc[i+1],s);
     }
     else {
-      if (length(vc)!=length(pc)) stop("Vector of the \"g\" values must have ", length(vc)," elements.");
+      if (length(vc)!=length(pc)) stop("The vector of the \"g\" values must have ", length(vc)," elements.");
       vc<-gsub("\\[","\\\\[",vc);
       vc<-gsub("\\]","\\\\]",vc); 
       for (i in 1:length(vc)) s<-gsub(vc[i],pc[[i]],s);
@@ -112,7 +111,7 @@ function(pv=c(), pn=0, pyc=c(), pc=c(), b=FALSE) {
               for (j in seq(i+2,length(vs),2) ) {
                    if (vs[i+1]==vs[j+1]) {
                        vs[i]<-(as.numeric(vs[i])+as.numeric(vs[j]));
-                       vs[j+1]<-""
+                       vs[j+1]<-"";
                    }  
                }
             }

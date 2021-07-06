@@ -1,10 +1,12 @@
 nPS <-
-function( v, V) {
+function( v = NULL, V = NULL) {
+  if ( is.null(v) ) stop("The first parameter is missing");
+  if ( is.null(V) ) stop("The second parameter is missing");
+  if (sum(v)>length(V)) stop("The database must contain more data")
   for (i in unlist(v)) if (i < 0) 
        stop("The values cannot be negative");
   for (i in 2:length(V))  
       if (length(V[[i]])!=length(V[[1]])) stop("The data arrays must have the same length")
-  if (sum(v)>length(V)) stop("The database must contain more data")
   # - - - Start Sub Function  - - - - - - - - - - - - - - - - - - - - - - - -
   kProd<- function (u,v) {
      uv<-list(); euv<-c(); k<-0;
@@ -24,7 +26,7 @@ function( v, V) {
 
   vTab<-mkmSet(sum(v));
 
-  #  moments vectors ---- OK
+  #  moment vectors ---- 
   vP<-list();
   for (i in 1:length(v) ) vP[[i]]<-intPart(v[i]);
   vP<-pCart(vP);

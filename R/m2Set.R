@@ -1,5 +1,5 @@
 m2Set <-
-function (v) {
+function (v=c(0)) {
       nv<-list();k<-0;
       for (i in 1:length( v ) ) for (j in 1:length(v[[i]][[1]]))
           if (!is.element( list(c(v[[i]][[1]][[j]])), nv) ) 

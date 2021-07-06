@@ -12,16 +12,17 @@ pCart( L )
 \item{L}{vectors in a list}
 }
 
-\details{The function pairs any element of the first vector with any element of the second vector, iteratively 
-if there are more than two vectors in input. Repetitions are allowed. See examples. 
+\details{The \code{\link{pCart}} function pairs any element of the first vector with any element of 
+the second vector, iteratively, if there are more than two vectors in input. Repetitions are allowed. 
+See examples. 
 }
 
 \value{
- \item{list}{list with the cartesian product}
+ \item{list}{the list with the cartesian product}
 }
 
 \references{
-Knuth, Donald E. (1998). The Art of Computer Programming. (3rd ed.). Addison Wesley.
+D. E. Knuth (1998) The Art of Computer Programming. (3rd ed.) Addison Wesley.
 }
 
 \author{
@@ -30,7 +31,7 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 }
 
 \note{
-Called by the function \code{\link{nPS}} in the package \code{kStatistics}.
+Called by the \code{\link{nPS}} function in the \code{kStatistics} package.
 }
 
 
@@ -48,12 +49,12 @@ pCart( list( A, B) )
 
 L1<-list( c(1,1), c(2)) 
 L2<-list( c(5,5), c(7) )
-# Return the Cartesian product [[1,1],[5,5]], [[1,1],[7]], [[2],[5,5]], [[2],[7]]
-# assign the value to L3
+# Return the cartesian product [[1,1],[5,5]], [[1,1],[7]], [[2],[5,5]], [[2],[7]]
+# and assign the result to L3
 L3<-pCart ( list(L1, L2) )
  
-# Return the Cartesian product between L3 and [7]
-# The result will be [[1,1],[5,5],[7]], [[1,1],[7],[7]], [[2],[5,5],[7]], [[2],[7],[7]]
+# Return the cartesian product between L3 and [7].
+# The result is [[1,1],[5,5],[7]], [[1,1],[7],[7]], [[2],[5,5],[7]], [[2],[7],[7]]
 pCart ( list(L3, c(7)) ) 
 
 }

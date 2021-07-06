@@ -1,6 +1,6 @@
 mom2cum <-
-function(n=0) {
-  v<-MFB(n,1);                                # Recall MFB Function
+function(n=1) {
+  v<-MFB(n,1);                                # Call the MFB Function
   v<-MFB2Set( v );                            # Expression to vector 
   for (j in 1:length(v)) {
     # ----- read -----------[ fix block ]-----#---------------#

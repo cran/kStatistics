@@ -1,16 +1,19 @@
 nKS <-
-function( v, V) {
+function( v = NULL, V = NULL) {
+  if ( is.null(v) ) stop("The first parameter is missing");
+  if ( is.null(V) ) stop("The second parameter is missing");
+  if (sum(v)>length(V)) stop("The database must contain more data")              
+  if (length(v)>1 ) stop("The first parameter must be an integer or a single-element array")              
   for (i in unlist(v)) if (i < 0) 
       stop("The values cannot be negative");
   for (i in 2:length(V))  
       if (length(V[[i]])!=length(V[[1]])) stop("The data arrays must have the same length")
-  if (sum(v)>length(V)) stop("The database must contain more data")              
   npk <-0;
   N<-length(V);
   n<-sum(v);  
   vTab<-mkmSet(v);
 
-  # --- Moments array ---- OK
+  # --- Moment array ---------
   vx<-c();
   for (i in 1:n) vx <- c( vx, (-1)^(i-1)*factorial(i-1)/ff(N,i) );
   
@@ -34,8 +37,8 @@ function( v, V) {
       pk<-list();
       for (i in 1:length(u[[1]])) pk[[i]] <- vk[[ u[[1]][[i]] ]];
       r<-1;
-      vm<-pPoly( pk );  # vettore momenti - polinomio in x  
-      evm<-0; # evalueate vm
+      vm<-pPoly(pk);    # vector of moments - polynomial in x                                              
+      evm<-0;           # evaluate vm
       for (i in 1:length(vm)) evm<-evm+vx[i]*vm[i]*u[[2]]; 
       
       pS<-1;

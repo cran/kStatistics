@@ -1,5 +1,6 @@
 Set2expr <-
-function(v=c()) {
+function(v=NULL ) {
+ if ( is.null(v) ) stop("The parameter is missing");
  u<-list(); U<-list();
  nv<-length(v)
  
@@ -44,7 +45,7 @@ function(v=c()) {
    S<-c(S, list(c(c,s)));
  }
  
- # compact monomial
+ # compact the monomial
  V<-"";
  if (length(S)>1) {
     for (i in 1:(length(S)-1)){
@@ -59,7 +60,7 @@ function(v=c()) {
             c<-eval(parse(text=c));
             signc<-ifelse(c>0," + "," - ");
             c<-ifelse( (abs(c)==1),"",abs(c)) ;
-            if (c!=0) V<-paste0(ifelse(nchar(V)>0,paste0(V,signc),""),c,S[[i]][2]);
+            if (c!=0) V<-paste0(V,signc,c,S[[i]][2]);
         }
     }
  }
@@ -68,6 +69,7 @@ function(v=c()) {
  c<-eval(parse(text=c));
  signc<-ifelse(c>0," + "," - ");
  c<-ifelse( (abs(c)==1),"",abs(c)) ;
- if ((c!=0) && (S[[i]][2]!="")) V<-paste0(ifelse(nchar(V)>0,paste0(V,signc),""),c,S[[i]][2]);
+ if ((c!=0) && (S[[i]][2]!="")) V<-paste0(V,signc,c,S[[i]][2]);
+ if ( substr(V,2,2)=="+") V<-substr(V,4,nchar(V));
  noquote(V);
 }

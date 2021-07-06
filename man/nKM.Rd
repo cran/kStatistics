@@ -1,39 +1,41 @@
 \name{nKM}
 \alias{nKM}
 \title{Multivariate K-Statistics}
-\description{Given a sample data, compute an estimate of the joint (multivariate) cumulant of a given
-order for the population distribution.
+\description{Given a multivariate data sample, the function returns an estimate of a joint 
+(or multivariate) cumulant with a fixed order.
 }
 
 \usage{
-nKM( v, V) 
+nKM( v = NULL, V = NULL) 
 }
 
 \arguments{
 
 \item{v}{vector of integers}
-\item{V}{vector of sample data}
+\item{V}{vector of a multivariate data sample}
 }
 
 \details{
-For a sample of i.i.d. random vectors, multivariate kstatistics are unbiased estimators of 
-the population joint cumulants and are expressed in terms of the power sum symmetric polynomials
-in the random vectors of the sample. Thus, for the given multivariate sample data, nKM( c(r, s, ...), data) computes 
-an estimate of the joint cumulant k[r, s, ...] of the population distribution.                  
+For a sample of i.i.d. random vectors, multivariate k-statistics are unbiased estimators of 
+the population joint cumulants with minimum variance and are expressed in terms of power sum symmetric polynomials
+in the random vectors of the sample. See the referred papers to read more about these estimators. 
+Thus, for the input multivariate sample \code{data}, running
+\code{nKM( c(r, s, ...), data)} with fixed order \code{v=(r, s, ...)} returns an estimate of the joint cumulant 
+\code{k[r, s, ...]} of the population distribution.
 
 }
 
 \value{
- \item{float}{the value of the multivariate kstatistics of order v}
+ \item{float}{the value of the multivariate k-statistics}
 }
 
 \references{
 
 E. Di Nardo, G. Guarino, D. Senato (2008) An unifying framework for k-statistics, polykays and their generalizations. 
-Bernoulli. 14(2), 440-468. (download from \url{http://arxiv.org/pdf/math/0607623.pdf}) 
+Bernoulli. 14(2), 440-468. (download from \url{https://arxiv.org/pdf/math/0607623.pdf}) 
  
 E. Di Nardo, G. Guarino, D. Senato (2008) Symbolic computation of moments of sampling distributions. 
-Comp. Stat. Data Analysis. 52(11), 4909-4922. (download from \url{http://arxiv.org/abs/0806.0129}) 
+Comp. Stat. Data Analysis. 52(11), 4909-4922. (download from \url{https://arxiv.org/abs/0806.0129}) 
 
 E. Di Nardo, G. Guarino, D. Senato (2009) A new method for fast computing unbiased estimators of cumulants. 
 Statistics and Computing, 19, 155-165.  (download from \url{https://arxiv.org/abs/0807.5008}) 
@@ -47,13 +49,12 @@ Elvira Di Nardo \email{elvira.dinardo@unito.it},\cr
 Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 }
 
-\section{Warning}{The size of each value of the data vector must coincide with the length of the first parameter}
+\section{Warning}{The size of each data vector must be equal to the length of the vector
+passed trough the first input variable.}
 
 \note{
-Called by the master function \code{\link{nPolyk}} in the package \code{kStatistics}
+Called by the master \code{\link{nPolyk}} function in the  \code{kStatistics} package.
 }
-
-
 
 \seealso{
 %\code{\link{nPolyk}},

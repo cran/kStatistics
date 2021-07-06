@@ -1,6 +1,5 @@
 ff <-
-function (n,k) {
-  if (n==0) return(1)
+function (n=1,k) {
   if (k>n) stop("k > n")
   if (n<0) stop("n < 0")
   nff<-1;

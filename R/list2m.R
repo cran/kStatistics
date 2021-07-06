@@ -1,5 +1,5 @@
 list2m <-
-function (v) {
+function (v=c(0)) {
       v_set<-list2Set(v);
       nv<-c();
       for (i in 1:length(v_set) ){

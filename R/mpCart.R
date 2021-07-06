@@ -1,5 +1,7 @@
 mpCart <-
-function (M1, M2) {
+function (M1=NULL, M2=NULL) {
+     if ( is.null(M1) ) stop("The first parameter is missing")
+     if ( is.null(M2) ) stop("The second parameter is missing")
      M12<-list();k<-0;
      for (i in 1:length(M1) ) {
           for (j in 1:length(M2) ){

@@ -1,18 +1,18 @@
 \name{MFB2Set}
 \alias{MFB2Set}
-\title{Convert the output of the MFB function to a vector
+\title{Convert the output of the MFB function into a vector
 }
 \description{
-Secondary function useful for manipulating the result of the MFB function
+Secondary function useful for manipulating the result of the \code{\link{MFB}} function.
 }
 \usage{
-MFB2Set(sExpr)
+MFB2Set(sExpr="")
 }
 \arguments{
-  \item{sExpr}{ MFB output }
+  \item{sExpr}{the output of the \code{\link{MFB}} function}
 }
 \value{
- \item{set}{output as set}
+ \item{set}{a set}
 }
 
 \author{
@@ -21,15 +21,15 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 }
 
 \seealso{
-\code{\link{MFB}}
+\code{\link{MFB}},
 \code{\link{Set2expr}}
 }
 
 \examples{
  
-# MFB(c(3),1) generate f[3]g[1]^3 + 3f[2]g[1]g[2] + f[1]g[3]
-# Convert the output of the MFB(c(3),1) to a vector using
-# MFB2Set(MFB(c(5),1)). It generates the following result:
+# Run MFB(c(3),1) to generate f[3]g[1]^3 + 3f[2]g[1]g[2] + f[1]g[3]
+# Convert the output of the MFB(c(3),1) into a vector using
+# MFB2Set(MFB(c(3),1)). The result is the following:
 # "1" "1" "f" "3" "1"
 # "1" "1" "g" "1" "3"
 # "2" "3" "f" "2" "1"
@@ -37,7 +37,6 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 # "2" "1" "g" "2" "1"
 # "3" "1" "f" "1" "1"
 # "3" "1" "g" "3" "1"
-
 MFB2Set(MFB(c(3),1))
 }
 

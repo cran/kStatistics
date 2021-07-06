@@ -1,5 +1,5 @@
 MFB2Set <-
-function(sExpr) {
+function(sExpr="") {
   if (nchar(sExpr)==0) stop("The first parameter cannot be empty");
   l_MFB<-sExpr;
   l_MFB<-gsub(" ","",l_MFB);

@@ -1,29 +1,36 @@
 \name{mCoeff}
 \alias{mCoeff}
-\title{Multiplicity in a multiset}
-\description{Return the instances of an element in a multiset.}
+\title{Extraction of a number from a list}
+\description{Given a list containing vectors paired with numbers, the function returns 
+the number paired with the vector matching the one passed in input.}
 
 \usage{
-mCoeff( v, L ) 
+mCoeff( v=NULL,L=NULL ) 
 }
 
 \arguments{
 
-\item{v}{vector to be searched in a list}
-\item{L}{list of two-dimensional vectors: in the first there is a vector and in the second its instances}
+\item{v}{vector to be searched in the list}
+\item{L}{two-dimensional list: in the first there is a vector and in the second 
+a number}
+
 }
 
-\details{This function is useful in the construction of kStatistics. \cr\cr
-Compute how many times an element is in a multiset, that is its multiplicity.}
-
+ 
+\details{The input variable \code{L} of the \code{\link{mCoeff}} function is a list 
+containing vectors and numbers. The  input variable \code{v} of the \code{\link{mCoeff}} 
+function is one of vectors contained in the list. The function searches the vector 
+\code{v} in the list and returns the number which is paired with \code{v} in the list.
+This function is useful in the construction of k-statistics but also to manage monomials 
+and their coefficients.}
 
 \value{
- \item{float}{multiplicity of the researched item}
+ \item{float}{the number paired with the input vector}
 }
 
 \references{
 E. Di Nardo, G. Guarino, D. Senato (2008) An unifying framework for k-statistics, polykays and their generalizations. 
-Bernoulli. 14(2), 440-468. (download from \url{http://arxiv.org/pdf/math/0607623.pdf}) 
+Bernoulli. 14(2), 440-468. (download from \url{https://arxiv.org/pdf/math/0607623.pdf}) 
  
 }
 
@@ -34,25 +41,25 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 }
 
 \note{
-Called by the functions \code{\link{nPS}}, \code{\link{nKM}}, \code{\link{nPM}} in the package \code{kStatistics}.
+Called by the \code{\link{nPS}}, \code{\link{nKM}} and \code{\link{nPM}} functions 
+in the \code{kStatistics} package.
 }
 
 
 \seealso{
 \code{\link{mkmSet}},
-\code{\link{umSet}},
 \code{\link{countP}},
 \code{\link{nStirling2}},
 \code{\link{intPart}},
-\code{\link{df}}
+\code{\link{ff}}
 }
 
 \examples{
 
-# Return [[1,1,1],1], [[1,2],3], [[3],1]
+# Run mkmSet(c(3)) to get the list L1 = [[1,1,1],1], [[1,2],3], [[3],1]
 L1 <- mkmSet(c(3))   
 
-# Return 3 that is the istance of [1,2] in L1
+# Return the number 3, which is the number paired with [1,2] in L1
 mCoeff( c(1,2), L1)  
  
 }

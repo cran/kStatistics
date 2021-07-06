@@ -1,5 +1,5 @@
 intPart <-
-function (n) {
+function (n=0,vOutput=FALSE) {
   if (n<1) stop("n must be > 0");
   #-------------------- 
   # Start Sub Function
@@ -22,5 +22,10 @@ function (n) {
   #-------------------- 
   # End Sub Function
   #-------------------- 
-  f_intPart(n,n) 
+  
+  u<-f_intPart(n,n)
+  
+  if (!vOutput) return(u); 
+  for (m in u) cat("[",m,"]\n"); 
+  cat("\n");  
 }

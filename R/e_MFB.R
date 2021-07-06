@@ -1,9 +1,9 @@
 e_MFB <-
 function(pv=c(), pn=0, pf=c(), pg=c(), b=FALSE) {
   
-   if (length(pv)<1) stop("the first parameter must be a non-zero vector of integers");
-   if (pn<1)  stop("the second parameter must be a positive integer")
-   for (m in unlist(pv)) if (m<0) stop("the first parameter cannot contain negative values")
+   if (length(pv)<1) stop("The first parameter must be a non-zero vector of integers");
+   if (pn<1)  stop("The second parameter must be a positive integer")
+   for (m in unlist(pv)) if (m<0) stop("The first parameter cannot contain negative values")
   
    vf<-c();vg<-c();
    l_MFB<-MFB(pv,pn);
@@ -83,8 +83,8 @@ function(pv=c(), pn=0, pf=c(), pg=c(), b=FALSE) {
      
      if ( (length(vf)>0) && (length(vg)==0)) {
        for (i in seq(1,length(vf)-1,2) ) s<-gsub(vf[i],vf[i+1],s);
-       if (length( unlist(strsplit(s,"g")) ) >1 )  stop( paste("Alncuni parametri 'g' non sono stati valutati",s));
-       if (length( unlist(strsplit(s,"f")) ) >1 )  stop( paste("Alncuni parametri 'f' non sono stati valutati",s));
+       if (length( unlist(strsplit(s,"g")) ) >1 )  stop( paste("Some 'g' parameters were not evaluated",s));
+       if (length( unlist(strsplit(s,"f")) ) >1 )  stop( paste("Some 'f' parameters were not evaluated",s));
        
        }
      else {

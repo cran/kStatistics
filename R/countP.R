@@ -1,5 +1,5 @@
 countP <-
-function (v) {
+function (v=c(1)) {
   for (i in unlist(v)) if (i < 0) stop("The values cannot be negative");
   if (typeof(v)=="list") {
       n<-1; u<-c();
@@ -17,7 +17,7 @@ function (v) {
   else { p<-1; for (x in v) p<-p*factorial(x);
          n<-factorial( sum(v) )/p;  }
 
-  # product of factorial of multiplicity
+  # product of multiplicity factorials
   u<-list2m(v); np<-1;
   for (i in 1:length(u)) np<-np*factorial(u[[i]][[2]]);
   

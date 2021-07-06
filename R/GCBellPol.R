@@ -1,10 +1,9 @@
 GCBellPol <-
-function(n=0,m=1,b=FALSE) {
-#  if ((length(n) > 1 ) || (n<=0)) stop("The first parameter must be positive integer");
-  v<-MFB(n,m);                                  # Recall MFB Function
-  v<-MFB2Set( v );  # Expression to vector
+function(nv=c(),m=1,b=FALSE) {
+  v<-MFB(nv,m);                             # Call the MFB Function
+  v<-MFB2Set( v );                          # Expression to vector
   for (j in 1:length(v)) {
-    # ----- read -----------[ fix block ]-----#---------------#
+    # ----- read -----------[ fix block ]---#---------------#
     c <- as.character(v[[j]][2]);           # coefficient
     x <-              v[[j]][3] ;           # variable
     i <-              v[[j]][4] ;           # subscript

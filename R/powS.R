@@ -1,5 +1,8 @@
 powS <-
-function (vn,lvd) {
+function (vn=NULL,lvd=NULL) {
+  if ( is.null(vn) )  stop("The first parameter is missing");
+  if ( is.null(lvd) ) stop("The second parameter is missing");
+
   for (i in 1:length(vn) ) if (vn[[i]]<0) 
       stop("The values of the first parameter cannot be negative")
   

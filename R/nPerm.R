@@ -16,7 +16,7 @@ function(L=c()) {
     return(U);
   } 
   
-  if (length(L)==0) stop("The vetor/list is empty");
+  if (length(L)==0) stop("The vector/list is empty");
   if (length(L)==1) return(L);
   if (toString(L[1])==toString(L[2])) {u<-list(c( L[1],L[2] ) );}
   else {u<-list2Set( list(c( L[1],L[2] ),c( L[2],L[1] ))  );}

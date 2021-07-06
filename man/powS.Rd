@@ -1,32 +1,34 @@
 \name{powS}
 \alias{powS}
 \title{Power sums}
-\description{Given one or more lists of numbers, computes the value of the power sum symmetric polynomial with 
-fixed degrees in one or more sets of variables replaced by a given list of numbers.}
+\description{The function returns the value of the power sum symmetric 
+polynomial, with fixed degrees and in one or more sets of variables, when the 
+variables are substituted with the input lists of numerical values.}
 
 \usage{
-powS(vn,lvd) 
+powS(vn = NULL, lvd = NULL) 
 }
 
 \arguments{
 
-\item{vn}{vector of powers (degrees)}
-\item{lvd}{list of numbers}
+\item{vn}{vector of integers (the powers of the indeterminates)}
+\item{lvd}{list of numerical values in place of the variables}
 }
 
-\details{
-Given the lists (x[1],x[2],...), (y[1],y[2],...), (z[1],z[2],...), ... in L and the integers (n,m,j,...) in vn, the
-function powS( vn ,L ) returns (x[1]^n)*(y[1]^m)*(z[1]^j)*...+(x[2]^n)*(y[2]^m)*(z[2]^j)*+...See also the examples.
+\details{Given the lists of numerical values \code{(x[1],x[2],...), (y[1],y[2],...), (z[1],z[2],...), ...} 
+in the input parameter \code{lvd} and the integers \code{(n,m,j,...)} in the input parameter \code{vn}, 
+the \code{\link{powS}} function returns the value of 
+\code{(x[1]^n)*(y[1]^m)*(z[1]^j)*...+(x[2]^n)*(y[2]^m)*(z[2]^j)*+...}. 
 }
 
 \value{
- \item{integer}{value of the power sum symmetric polynomial}
+ \item{integer}{the value of the polynomial}
 }
 
 \references{
 
 E. Di Nardo, G. Guarino, D. Senato (2008) Symbolic computation of moments of sampling distributions. 
-Comp. Stat. Data Analysis. 52(11), 4909-4922. (download from \url{http://arxiv.org/abs/0806.0129}) 
+Comp. Stat. Data Analysis. 52(11), 4909-4922. (download from \url{https://arxiv.org/abs/0806.0129}) 
 
 }
 
@@ -36,8 +38,8 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 }
 
 \note{
-Called by the functions \code{\link{nKS}}, \code{\link{nKM}}, \code{\link{nPS}}, \code{\link{nPM}} in the 
-package \code{kStatistics}.
+Called by the  \code{\link{nKS}}, \code{\link{nKM}}, \code{\link{nPS}} and \code{\link{nPM}} functions 
+in the \code{kStatistics} package.
 }
 
 

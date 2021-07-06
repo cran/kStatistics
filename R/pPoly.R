@@ -1,5 +1,6 @@
 pPoly <-
-function( L ) {
+function( L=NULL ) {
+  if ( is.null(L) ) stop("The parameter is missing");
   nL<-length(L);
   if (nL==1) return(L[[1]]);
 

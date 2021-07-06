@@ -10,11 +10,11 @@ function(v=c(), n=0) {
       # Input.......: vector
       # Output......: string 
       # Example.....: um_MFB( c(2) )    -> f[2]g[1]^2 + f[1]g[2]
-      #                                  it is result for (d^2/dx^2)( f(g(x)) )
+      #                  same result for (d^2/dx^2)( f(g(x)) )
       # Example.....: um_MFB( c(1,1) )   -> f[1]g[1,1] + f[2]g[1,0]g[0,1] 
-      #                  it is result for (d^2/dxdy)( f(g(x,y)) )
+      #                  same result for (d^2/dxdy)( f(g(x,y)) )
       # Example.....: um_MFB( c(1,1) )   -> f[1]g[1,1] + f[2]g[1,0]g[0,1] 
-      #                  it is result for (d^2/dxdy)( f(g(x,y)) )
+      #                  same result for (d^2/dxdy)( f(g(x,y)) )
       # Called by...: MFB 
       #----------------------------------------------------------------------------
       um_MFB <- function (v) {
@@ -84,7 +84,7 @@ function(v=c(), n=0) {
       # gval( "(12)(2)f1[2]g1[1,1]g1[1,0]^2(2)f2[2]g2[1,1]g2[1,0]" );
       #----------------------------#
       # SubFunction gf             #
-      # recall gval function       #
+      # Call gval function       #
       #----------------------------#
       gf <- function(ps,n) {
          s<-gval(ps,n)
@@ -100,7 +100,7 @@ function(v=c(), n=0) {
       joint <- function(v) {
             n<-length(v);
             u<-list(); 
-            #---------------- fattore moltiplicativo -------------
+            #---------------- multiplicative factor -------------
             p<-1;
             for (i in 1:length(v[[1]])) {a<-0; for (m in v) a<-a+m[[i]]; p<-p*factorial(a);}  
             for (m in c(unlist(v)) ) p<-p/factorial(m);
@@ -136,9 +136,9 @@ function(v=c(), n=0) {
       #============================#
       # Master Function            #
       #============================#      
-      if (length(v)<1) stop("the first parameter must be a non-zero vector of integers");
-      if (n<1)  stop("the second parameter must be a positive integer")
-      for (m in unlist(v)) if (m<0) stop("the first parameter cannot contain negative values")
+      if (length(v)<1) stop("The first parameter must be a non-zero vector of integers");
+      if (n<1)  stop("The second parameter must be a positive integer")
+      for (m in unlist(v)) if (m<0) stop("The first parameter cannot contain negative values")
       if (n==1) {u<-um_MFB(v);}
       else {u<-list();M<-mkT(v,n);  
             for (i in 1:length(M) ) u[[i]]<-joint( M[[i]] )

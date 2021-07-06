@@ -1,11 +1,11 @@
 \name{ff}
 \alias{ff}
 \title{Falling factorial}
-\description{Computes the descending (falling) factorial of a positive integer n 
-with respect to a positive integer k less or equal to n.}
+\description{The function computes the descending (falling) factorial of a positive integer \code{n} 
+with respect to a positive integer \code{k} less or equal to \code{n}.}
 
 \usage{
-ff( n, k ) 
+ff( n=1, k ) 
 }
 
 \arguments{
@@ -14,12 +14,11 @@ ff( n, k )
 \item{k}{integer}
 }
 
-\details{
-ff(n, k) returns n(n-1)(n-2).....(n-k+1).
+\details{Run \code{ff(n, k)} to get \code{n(n-1)(n-2).....(n-k+1)}.
 }
 
 \value{
- \item{integer}{descending factorial}
+ \item{integer}{the descending factorial}
 }
 
 \author{
@@ -30,7 +29,6 @@ Giuseppe Guarino \email{giuseppe.guarino@rete.basilicata.it}
 
 \seealso{
 \code{\link{mkmSet}},
-\code{\link{umSet}},
 \code{\link{countP}},
 \code{\link{nStirling2}},
 \code{\link{intPart}},

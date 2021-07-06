@@ -1,11 +1,13 @@
 nKM <-
-function( v, V) {
+function( v = NULL, V = NULL) {
+  if ( is.null(v) ) stop("The first parameter is missing");
+  if ( is.null(V) ) stop("The second parameter is missing");
+  if (sum(unlist(v))>length(V))  stop("The database must contain more data")
   for (i in unlist(v)) if (i < 0) 
        stop("The values cannot be negative");
   for (i in 2:length(V))  
-      if (length(V[[i]])!=length(V[[1]])) stop("The arrays in data set must have the same length")
-  if (length(v)!=length(V[[1]])) stop("The first parameter and arrays in data set must be have the same length")
-  if (sum(unlist(v))>length(V))  stop("The database must contain more data")  
+      if (length(V[[i]])!=length(V[[1]])) stop("The arrays in the data set must have the same length")
+  if (length(v)!=length(V[[1]])) stop("The first parameter and the arrays in the data set must have the same length")
   npk <-0;
   N<-length(V);
   n<-sum(v);  
@@ -46,7 +48,7 @@ function( v, V) {
        pk<-list();
        for (i in 1:length(u[[1]])) pk[[i]] <- vk[[ u[[1]][[i]] ]];
        r<-1;
-       vm<-pPoly( pk );  # vettore momenti - polinomio in x  
+       vm<-pPoly( pk );  # vector of moments - polynomial in x  
        evm<-0; # evalueate vm
        for (i in 1:length(vm)) evm<-evm+vx[i]*vm[i]*u[[2]]; 
        

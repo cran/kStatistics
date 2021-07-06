@@ -1,5 +1,7 @@
 nPolyk <-
-function (L,data, bhelp=NULL) {
+function (L=NULL,data=NULL, bhelp=NULL) {
+ if ( is.null(L) ) stop("The first parameter is missing");
+ if ( is.null(data) ) stop("The second parameter is missing");
  if (is.null(bhelp) || bhelp!=TRUE) {bHelp<-FALSE} else {bHelp<-TRUE}
 
  if (typeof(L)=="list") {
@@ -12,7 +14,7 @@ function (L,data, bhelp=NULL) {
       if (isPS) { if (bHelp) cat("PS:");return(nPS((unlist(L)),data));}
          else   { if (bHelp) cat("PM:");return(nPM((L),data));}
     }    
-    cat("Error: type of sub-function is not determined\n\r");  
+    cat("Error: type of sub-function not determined\n\r");  
    }
  else {
     if (length(L)==1) { if (bHelp) cat("KS:");return(nKS((L),data));}

@@ -1,13 +1,17 @@
 nPM <-
-function( v, V) {
+function( v = NULL, V = NULL) {
+  if ( is.null(v) ) stop("The first parameter is missing");
+  if ( is.null(V) ) stop("The second parameter is missing");
+  if (typeof(v)!="list") stop("The fist parameter must by a list")
+  if (typeof(V)!="list") stop("The second parameter must by a list")
+  if (length(v[[1]])!=length(V[[1]])) stop("The dimension of the polykay indexes and the number of the columns of the data must be equal")
+  if (sum(unlist(v))>length(V)) stop("The database must contain more data")
   for (i in unlist(v)) if (i < 0) 
        stop("The values cannot be negative");
   for (i in 2:length(V))  
-      if (length(V[[i]])!=length(V[[1]])) stop("The arrays in data set must have the same length")
+      if (length(V[[i]])!=length(V[[1]])) stop("The arrays in the data set must have the same length")
   for (i in 2:length(v))  
       if (length(v[[i]])!=length(v[[1]])) stop("The arrays in the first parameter must have the same length")
-  if (length(c(v[[1]]))!=length(V[[1]])) stop("The first parameter and arrays in data set must be have the same length")
-  if (sum(unlist(v))>length(V)) stop("The database must contain more data")
   # - - - Start Sub Function  - - - - - - - - - - - - - - - - - - - - - - - - 
   ricalcMF <- function (M) {
       appM<-M;
@@ -16,6 +20,21 @@ function( v, V) {
                         (-1)^(length(appM[[i]][[1]])-1) * 
                      factorial(length(appM[[i]][[1]])-1);
       return(appM);
+  }
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  umSet <- function (pM=NULL) {
+       if ( is.null(pM) ) stop("The parameter is missing");
+       M<-pM; 
+       for (i in 1:(length(M)-1) )
+           for (j in (i+1):length(M) ) {
+               if ( setequal( M[[i]][[1]], M[[j]][[1]]  ) & length(M[[i]][[1]])==length(M[[j]][[1]] ) )
+                  { M[[i]][[2]]<-M[[i]][[2]]+M[[j]][[2]];
+                    M[[j]][[2]]<-0;
+           }
+      }
+      oM<-list();k<-0;
+      for (i in 1:length(M)) if (M[[i]][[2]]!=0) {k<-k+1; oM[[k]]<-M[[i]]}
+        return(oM);
   }
   # - - - End Sub Function  - - - - - - - - - - - - - - - - - - - - - - - - - 
   npk <-0;
