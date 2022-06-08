@@ -1,4 +1,4 @@
-08947c462f8603b4fc176527ac76bd6e *DESCRIPTION
+4c15f1e9997c2ea46219d13c3c0f73fd *DESCRIPTION
 df390c53434517b304ac5db487184641 *NAMESPACE
 c403ea8320ab5ac6672ef5aa879b370b *R/GCBellPol.R
 edd55c1c3c09e1298e93f31d186e7606 *R/MFB.R
@@ -8,7 +8,7 @@ aa893a2b4e4b51daba4351f7d9ebfeba *R/countP.R
 20b64b5888c51fe465178fe27f21ac74 *R/cum2mom.R
 adc8340f242788fd9ff150d65102ff8f *R/eBellPol.R
 4a5efe36a70d9172d04ec1c1c4639914 *R/e_GCBellPol.R
-82527f145ede1f38af8c2f1bbd3ff2d1 *R/e_MFB.R
+4a581e8d44e0bf282ee3b54459c706a7 *R/e_MFB.R
 de6a8a68d5796c0ee11d0bbe8ceab037 *R/e_eBellPol.R
 cb7075df29beebd919d405b57208887f *R/ff.R
 0418d1a34fbe0552884977cdc90794cd *R/gpPart.R
@@ -33,7 +33,7 @@ f14c009a4c92f75c05e0c372044e4e16 *R/pCart.R
 5c2bec8aa26de4b7b7105ce7fbcef5ef *R/pPart.R
 b2071fe58407bc8d36032158dbd6c7da *R/pPoly.R
 683bc66d4941d3e5a5d5dc501cfcfbec *R/powS.R
-c39e977a0cd1f424ac21fecdb042805b *build/partial.rdb
+5a5c8ef6d56197718260b4cc3eed3eea *build/partial.rdb
 1e131fe71891d9c4467eab57adb00866 *man/GCBellPol.Rd
 ba5e247fcf6e73a24dde00036b59cc50 *man/MFB.Rd
 6b1fc0b8b98b43448181049bf988da8e *man/MFB2Set.Rd

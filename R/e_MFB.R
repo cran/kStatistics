@@ -36,8 +36,8 @@ function(pv=c(), pn=0, pf=c(), pg=c(), b=FALSE) {
      i<-i+1;
    }
    
-   vf<-sort(unlist(list2Set(c(vf))));
-   vg<-sort(unlist(list2Set(c(vg))));
+   vf<-unlist(rev(list2Set(c(vf))));
+   vg<-unlist(list2Set(c(vg)));
    
    s<-"";
    
